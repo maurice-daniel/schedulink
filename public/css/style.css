@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+h1.mb-0 {
+    color: black;
+    
+}
+.mb-0 {
+    margin-top: 30px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    opacity: 1;
+    overflow-y: scroll;
+    margin: 0;
+    background-color: rgb(11, 57, 84);
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.275rem;
+    color: var(--bs-emphasis-color);
+}
+
+
+
+/* Layout for admin dashboard skeleton */
+
+.wrapper {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    max-width: 264px;
+    min-width: 264px;
+    background-color: rgb(11, 57, 84);
+    transition: all 0.35s ease-in-out;
+    position: sticky; /* Make the sidebar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it's above other content */
+}
+ /* Add this style */
+ .sidebar-nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(11, 57, 84);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    width: 100%;
+    background: var(--bs-dark-bg-subtle);
+}
+
+/* Sidebar Elements Style */
+
+.sidebar-logo {
+    padding: 1.15rem;
+}
+
+.sidebar-logo a {
+    color: #e9ecef;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.sidebar-header {
+    color: #e9ecef;
+    font-size: .75rem;
+    padding: 1.5rem 1.5rem .375rem;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #e9ecef;
+    position: relative;
+    display: block;
+    font-size: 0.875rem;
+}
+
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.navbar {
+    background-color: rgb(11, 57, 84);
+}
+
+.navbar-expand .navbar-nav {
+    margin-left: auto;
+}
+
+.content {
+    background-color: rgba(255, 254, 255, 0.8);
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-width: 100vw;
+    width: 100vw;
+    padding: 1rem; /* Optional: Add padding for better appearance */
+}
+.content-profile {
+    display: grid;
+    background-color: rgb(249 245 245 / 80%);
+    flex: 1;
+    overflow-y: auto;
+    max-width: 100vw;
+    width: 100vw;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .content {
+        max-width: none; /* Reset max-width */
+        width: auto; /* Reset width */
+    }
+}
+
+
+.illustration {
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(--bs-emphasis-color);
+}
+
+.illustration-img {
+    max-width: 150px;
+    width: 100%;
+}
+
+/* Sidebar Toggle */
+
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+/* Footer and Nav */
+
+@media (max-width: 767.98px) {
+    .js-sidebar {
+        margin-left: -264px;
+    }
+
+    #sidebar.collapsed {
+        margin-left: 0;
+    }
+
+    .navbar,
+    footer {
+        width: 100vw;
+    }
+}
+
+/* Table style */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.col-md-2 {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.427); /* Added border */
+    flex-wrap: nowrap;
+}
+
+   
+.table th{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.807); /* Added bottom border */
+    
+}
+
+.table td {
+    padding: 10px;
+    text-align: left;
+    color: black; /* Set text color to black */
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(93, 111, 136, 0.741);
+    --bs-table-hover-color: #fffefe;
+}
+
+/* Sort indicator icons */
+.fa-sort,
+.fa-sort-up,
+.fa-sort-down {
+    color: black; /* Set sort indicator color to black */
+}
+
+/* Modal design */
+.modal-content {
+    background-color: #dee2e6; /* Updated modal background color */
+    color: black;
+}
+
+/* Modal body */
+.modal-body {
+    color: black; /* Set modal body text color to black */
+}
+
+/* Form control */
+.form-control {
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black; /* Set form control text color to black */
+    background-color: #ffffff38;
+    border: 1px solid black; /* Updated border */
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* Success alert design */
+.alert-success {
+    --bs-alert-color: #d1dfd8;
+    --bs-alert-bg: #1b8957;
+    --bs-alert-border-color: var(--bs-success-border-subtle);
+    --bs-alert-link-color: var(--bs-success-text-emphasis);
+}
+
+/* Reset default margin-bottom for modal */
+.modal {
+    margin-bottom: 0;
+}
+
+
+.inline-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-input {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.ml-auto {
+    margin-left: auto; /* Adds margin to the left, pushing the button to the right */
+}
+
+.light-bg {
+    background-color: #f8f9fabb;
+    color: #212529;
+}
+#searchInput.form-control:focus {
+    background-color: #f8f9fa; /* Change background color on focus */
+    border: auto;
+    color:black; /* Change text color on focus */
+}
+
+#searchInput.form-control::placeholder {
+    color:black; /* Change placeholder text color */
+}
+
+
+
+/* design sa 3 ka dashboard choice */
+.btn-entry {
+
+    height: 80px;
+    width: 17%;
+    --bs-btn-color: #fdfdfd;
+    --bs-btn-bg: #0b3954c4;;
+    --bs-btn-border-color: #3b7191;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #507083;
+    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #0f0f0f;
+    --bs-btn-active-bg: #0a58ca;
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+}
+
+.dash-content{
+    text-align: center;
+    
+}
+
+.table-dash {
+    overflow-x: auto;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    text-align: left;
+    color: black;
+}
+
+.table-dash th{
+    border-bottom: 3px solid rgba(0, 0, 0, 0.427);
+    background-color: #b8daff;
+    text-align: center;
+}
+
+
+.table-dash td {
+    
+    border-right: 1px solid rgba(0, 0, 0, 0.427); /* Add vertical border */
+    padding: 8px; /* Adjust padding for better spacing */
+}
+
+/* Style the last column to remove the right border */
+.table-dash th:last-child,
+.table-dash td:last-child {
+    border-right: none;
+}
+
+.column-head {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* Add border between elements */
+    padding-bottom: 10px; /* Add padding for spacing */
+    margin-top: 50px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+/* Styles for .btn-assign */
+.btn-assign {
+    --bs-btn-color: #000000;
+    --bs-btn-bg: #26c240;
+    --bs-btn-border-color: #26c240;
+    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-bg: #20a436;
+    --bs-btn-hover-border-color: #20a436;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fffcfc;
+    --bs-btn-active-bg: #26c240;
+    --bs-btn-active-border-color: #26c240;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0d6efd;
+    --bs-btn-disabled-border-color: #0d6efd;
+}
+
+/* Styles for .btn-print */
+.btn-print {
+    --bs-btn-color: #000000;
+    --bs-btn-bg: #e9980c;
+    --bs-btn-border-color: #e9980c;
+    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-bg: #cb860f;
+    --bs-btn-hover-border-color: #cb860f;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fcfcfc;
+    --bs-btn-active-bg: #e9980c;
+    --bs-btn-active-border-color: #e9980c;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #e9980c;
+    --bs-btn-disabled-border-color: #e9980c;
+}
+.row {
+     
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+.col-md-auto {
+    flex: 0 0 auto;
+    width: auto;
+    display: contents;
+}
+
+
+
+/* edit profile */
+/* General styling for the edit profile page */
+.edit-profile-body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Wrapper for the form */
+.edit-profile-wrapper {
+    color: black;
+    width: 100%;
+    /* max-width: 600px; */
+    padding: 20px;
+    /* margin: 20px; */
+    background-color: #fff;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+    display: contents;
+}
+
+/* Header styling */
+.edit-profile-wrapper .header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-profile-wrapper .header h1 {
+   
+    color: #000000;
+}
+
+/* Form styling */
+.edit-profile-form .form-group {
+    margin-bottom: 15px;
+}
+
+.edit-profile-form .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.edit-profile-form .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.edit-profile-form .form-control:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+.edit-profile-form .invalid-feedback {
+    display: block;
+    color: #dc3545;
+    font-size: 14px;
+}
+
+.edit-profile-form .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-profile-form .btn:hover {
+    background-color: #0056b3;
+}
+
+.edit-profile-form .text-end {
+    text-align: right;
+}
+
+/* login design */
+.btn-reg:not(:disabled):not(.disabled) {
+    margin-top: 10%;
+    cursor: pointer;
+}
