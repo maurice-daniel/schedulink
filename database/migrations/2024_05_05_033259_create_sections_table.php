@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
-            $table->string('sectionName');
-            $table->string('sectioncode');
+            $table->string('sectionName')->unique();
+            $table->string('sectioncode')->unique();
             $table->string('year');
             $table->timestamps();
         });

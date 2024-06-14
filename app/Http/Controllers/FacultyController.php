@@ -29,15 +29,26 @@ class FacultyController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'facultyname' => 'required|string|max:255',
-            'facultyemail' => 'required|string|email|max:255|unique:faculties',
-            'facultyunit' => 'required|numeric',
-        ]);
+        // Define custom error messages
+        $messages = [
+            'facultyname.unique' => 'The faculty name already exists.',
+            'facultyemail.unique' => 'The faculty email already exists.',
+        ];
 
+        // Validate the request data with custom error messages
+        $data = $request->validate([
+            'facultyname' => 'required|string|max:255|unique:faculties,facultyname',
+            'facultyemail' => 'required|string|email|max:255|unique:faculties,facultyemail',
+            'facultyunit' => 'required|numeric',
+        ], $messages);
+
+        // Create the faculty record
         Faculty::create($data);
+
+        // Redirect to the index page with a success message
         return redirect()->route('faculty.index')->with('success', 'Faculty added successfully');
     }
+
 
     /**
      * Display the specified resource.

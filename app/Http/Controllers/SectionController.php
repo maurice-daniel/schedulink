@@ -30,22 +30,26 @@ class SectionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        // Validate incoming request data
-        $data = $request->validate([
-            'sectionName' => 'required',
-            'sectioncode' => 'required',
-            'year' => 'required|in:1,2,3,4', // Ensure year is one of 1, 2, 3, or 4
-            // Add more validation rules if needed
-        ]);
-    
-        // Create a new section with the validated data
-        $newSection = Section::create($data);
-    
-        // Redirect back with a success message
-        return redirect()->route('section.index')->with('success', 'Section added successfully');
-    }
+   public function store(Request $request)
+   {   
+       $messages = [
+           'sectionName.unique' => 'The section name already exists.',
+           'sectioncode.unique' => 'The section code already exists.',
+       ];
+
+       // Validate incoming request data
+       $data = $request->validate([
+           'sectionName' => 'required|unique:sections,sectionName',
+           'sectioncode' => 'required|unique:sections,sectioncode',
+           'year' => 'required|in:1,2,3,4', // Ensure year is one of 1, 2, 3, or 4
+       ], $messages);
+
+       // Create a new section with the validated data
+       $newSection = Section::create($data);
+
+       // Redirect back with a success message
+       return redirect()->route('section.index')->with('success', 'Section added successfully');
+   }
 
     /**
      * Display the specified resource.

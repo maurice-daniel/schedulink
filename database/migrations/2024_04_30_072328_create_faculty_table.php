@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
-            $table->string('facultyname');
+            $table->string('facultyname')->unique();
             $table->string('facultyemail')->unique();
             $table->integer('facultyunit');
             $table->timestamps();

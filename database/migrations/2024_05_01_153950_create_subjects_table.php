@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('subjectName');
-            $table->string('subjectCode');
+            $table->string('subjectName')->unique();
+            $table->string('subjectCode')->unique();
             $table->integer('subjectUnit');
             $table->unsignedInteger('subjectYear');
             $table->unsignedInteger('subjectSemester');

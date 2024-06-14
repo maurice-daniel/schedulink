@@ -30,16 +30,20 @@ class SubjectController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   
+        $messages = [
+            'subjectName.unique' => 'The subject name already exists.',
+            'subjectCode.unique' => 'The subject code already exists.',
+        ];
         // Validate incoming request data
         $data = $request->validate([
-            'subjectName' => 'required',
-            'subjectCode' => 'required',
+            'subjectName' => 'required|unique:subjects,subjectName',
+            'subjectCode' => 'required|unique:subjects,subjectCode',
             'subjectUnit' => 'required',
             'subjectYear' => 'required|in:1,2,3,4', // Ensure year is one of 1, 2, 3, or 4
             'subjectSemester' => 'required|in:1,2', // Ensure semester is one of 1, 2, or 3 (Summer)
             // Add more validation rules if needed
-        ]);
+        ],$messages);
 
         // Create a new subject with the validated data
         $newSubject = Subject::create($data);

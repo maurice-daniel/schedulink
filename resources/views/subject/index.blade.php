@@ -8,7 +8,16 @@
                 <h1 class="mb-0">Subject List</h1>
             </div>
         </div>
-
+         @if($errors->any())
+        <div class="alert alert-danger" role="alert">
+            <strong>Whoops! Duplicate Entry.</strong>
+            <ul class="mb-0 mt-2">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+         @endif
         @if(Session::has('success'))
             <div class="alert alert-success" role="alert">
                 {{ Session::get('success') }}
