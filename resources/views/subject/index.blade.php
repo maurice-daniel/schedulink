@@ -61,7 +61,7 @@
         </div>
         <div class="table-responsive">
             <table id="subjectTable" class="table table-hover">
-                <thead class="table-primary">
+                <thead class="light-bg">
                     <tr>
                         <th onclick="sortTable(0)">Subject Name <i class="fas fa-sort"></i></th>
                         <th onclick="sortTable(1)">Subject Code <i class="fas fa-sort"></i></th>

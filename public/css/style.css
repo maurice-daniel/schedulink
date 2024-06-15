@@ -19,13 +19,13 @@ body {
     opacity: 1;
     overflow-y: scroll;
     margin: 0;
-    background-color: rgb(11, 57, 84);
+/*   background-color: rgb(0,28,56); !disabled so the color is not global*/
 }
 
 a {
     cursor: pointer;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+/*    font-family: 'Poppins', sans-serif; !duplicated already in body*/
 }
 
 li {
@@ -33,7 +33,7 @@ li {
 }
 
 h4 {
-    font-family: 'Poppins', sans-serif;
+/*    font-family: 'Poppins', sans-serif; !duplicated already in body*/
     font-size: 1.275rem;
     color: var(--bs-emphasis-color);
 }
@@ -51,8 +51,8 @@ h4 {
 #sidebar {
     max-width: 264px;
     min-width: 264px;
-    background-color: rgb(11, 57, 84);
-    transition: all 0.35s ease-in-out;
+    background-color: rgb(0,28,56);
+/*    transition: all 0.35s ease-in-out; !disabled because it causes laggy animation when reloading*/
     position: sticky; /* Make the sidebar sticky */
     top: 0; /* Stick to the top of the viewport */
     z-index: 1000; /* Ensure it's above other content */
@@ -62,7 +62,7 @@ h4 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgb(11, 57, 84);
+    background-color: rgb(0,28,56);
 }
 
 .main {
@@ -71,9 +71,9 @@ h4 {
     min-height: 100vh;
     min-width: 0;
     overflow: hidden;
-    transition: all 0.35s ease-in-out;
+/*    transition: all 0.35s ease-in-out; !also disabled to avoid laggy animation*/
     width: 100%;
-    background: var(--bs-dark-bg-subtle);
+/*    background: var(--bs-dark-bg-subtle); !disabled because unsure where it applies*/
 }
 
 /* Sidebar Elements Style */
@@ -83,7 +83,7 @@ h4 {
 }
 
 .sidebar-logo a {
-    color: #e9ecef;
+    color: white;
     font-size: 1.15rem;
     font-weight: 600;
 }
@@ -97,14 +97,14 @@ h4 {
 }
 
 .sidebar-header {
-    color: #e9ecef;
+    color: white;
     font-size: .75rem;
     padding: 1.5rem 1.5rem .375rem;
 }
 
 a.sidebar-link {
     padding: .625rem 1.625rem;
-    color: #e9ecef;
+    color: white;
     position: relative;
     display: block;
     font-size: 0.875rem;
@@ -120,12 +120,12 @@ a.sidebar-link {
     right: 1.5rem;
     top: 1.4rem;
     transform: rotate(-135deg);
-    transition: all .2s ease-out;
+/*    transition: all .2s ease-out; !disabled for faster animation*/
 }
 
 .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
     transform: rotate(45deg);
-    transition: all .2s ease-out;
+/*    transition: all .2s ease-out; !disabled for faster animation*/
 }
 
 .avatar {
@@ -134,7 +134,7 @@ a.sidebar-link {
 }
 
 .navbar {
-    background-color: rgb(11, 57, 84);
+    background-color: rgb(0,28,56);
 }
 
 .navbar-expand .navbar-nav {
@@ -215,13 +215,13 @@ a.sidebar-link {
 .table {
     border-collapse: collapse;
     width: 100%;
-    border: 2px solid rgba(0, 0, 0, 0.427); /* Added border */
+    border: 1px solid rgba(0, 0, 0, 0.427); /* Added border */
     flex-wrap: nowrap;
 }
 
    
 .table th{
-    border-bottom: 2px solid rgba(0, 0, 0, 0.807); /* Added bottom border */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.427); /* Added bottom border */
     
 }
 
@@ -263,7 +263,7 @@ a.sidebar-link {
     line-height: 1.5;
     color: black; /* Set form control text color to black */
     background-color: #ffffff38;
-    border: 1px solid black; /* Updated border */
+    border: 1px solid rgba(0, 0, 0, 0.427); /* Updated border */
     border-radius: .375rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
@@ -343,16 +343,17 @@ a.sidebar-link {
     overflow-x: auto;
     border-collapse: collapse;
     width: 100%;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.427);
     padding: 10px;
     text-align: left;
     color: black;
 }
 
 .table-dash th{
-    border-bottom: 3px solid rgba(0, 0, 0, 0.427);
-    background-color: #b8daff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.427);
+    background-color: #f8f9fabb;
     text-align: center;
+    padding: 0.5rem 0rem 0.5rem;
 }
 
 
@@ -371,7 +372,7 @@ a.sidebar-link {
 .column-head {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ccc; /* Add border between elements */
+/*    border-bottom: 1px solid red; !disabled the border not necessary*/
     padding-bottom: 10px; /* Add padding for spacing */
     margin-top: 50px;
 }
@@ -387,10 +388,10 @@ a.sidebar-link {
 
 /* Styles for .btn-assign */
 .btn-assign {
-    --bs-btn-color: #000000;
+    --bs-btn-color: #ffffff;
     --bs-btn-bg: #26c240;
     --bs-btn-border-color: #26c240;
-    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-color: #ffffff;
     --bs-btn-hover-bg: #20a436;
     --bs-btn-hover-border-color: #20a436;
     --bs-btn-focus-shadow-rgb: 49, 132, 253;
@@ -405,10 +406,10 @@ a.sidebar-link {
 
 /* Styles for .btn-print */
 .btn-print {
-    --bs-btn-color: #000000;
+    --bs-btn-color: #ffffff;
     --bs-btn-bg: #e9980c;
     --bs-btn-border-color: #e9980c;
-    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-color: #ffffff;
     --bs-btn-hover-bg: #cb860f;
     --bs-btn-hover-border-color: #cb860f;
     --bs-btn-focus-shadow-rgb: 49, 132, 253;
@@ -438,7 +439,6 @@ a.sidebar-link {
 /* edit profile */
 /* General styling for the edit profile page */
 .edit-profile-body {
-    font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #333;
     display: flex;

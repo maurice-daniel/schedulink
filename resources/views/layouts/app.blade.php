@@ -19,7 +19,7 @@
             <div class="h-100">
                 <div class="sidebar-logo">
                     <a href="{{ route('dashboard') }}">
-                        <img src="image/logo.png" style="width: 35px; height: auto;">
+                        <img src="image/logo.png" style="width: 35px; height: auto; background: white; border-radius: 90%; padding: 4px;">
                         Schedulink
                     </a>
                 </div>
