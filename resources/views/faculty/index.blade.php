@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="facultyunit" class="form-label">Unit</label>
-                                            <input type="integer" class="form-control" id="facultyunit" name="facultyunit" value="{{ $faculty->facultyunit }}">
+                                            <input type="number" class="form-control" id="facultyunit" name="facultyunit" value="{{ $faculty->facultyunit }}">
                                         </div>
                                         <button type="submit" class="btn btn-warning">Update</button>
                                     </form>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="facultyunit" class="form-label">Unit</label>
-                        <input type="integer" class="form-control" id="facultyunit" name="facultyunit">
+                        <input type="number" class="form-control" id="facultyunit" name="facultyunit">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

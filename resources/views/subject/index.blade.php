@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="subjectUnit" class="form-label">Unit</label>
-                                            <input type="integer" class="form-control" id="subjectUnit" name="subjectUnit" value="{{ $subject->subjectUnit }}">
+                                            <input type="number" class="form-control" id="subjectUnit" name="subjectUnit" value="{{ $subject->subjectUnit }}">
                                         </div>
                                         <div class="mb-3">
                                             <label for="subjectYear" class="form-label">Year</label>
@@ -170,7 +170,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="subjectUnit" class="form-label">Unit</label>
-                        <input type="integer" class="form-control" id="subjectUnit" name="subjectUnit">
+                        <input type="number" class="form-control" id="subjectUnit" name="subjectUnit">
                     </div>
                     <div class="mb-3">
                         <label for="subjectYear" class="form-label">Year</label>
