@@ -8,60 +8,62 @@
     <title>Create an Account</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="body-log d-flex align-items-center">
+<body class="d-flex align-items-center" style="height: 100vh; background-color: rgb(0,28,56);">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                        </div>
+                        <form action="{{ route('register.save') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}" placeholder="Name" required>
+                                @error('name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
-                            <form action="{{ route('register.save') }}" method="POST" class="user">
-                                @csrf
-                                <div class="form-group">
-                                    <input name="name" type="text" class="form-control form-control-user" id="name" value="{{ old('name') }}" placeholder="Name">
-                                    @error('name')
-                                    <span class="invalid-feedback">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                <input name="email" type="email" class="form-control form-control-user" id="email" value="{{ old('email') }}" placeholder="Email Address">
-                                    @error('email')
-                                    <span class="invalid-feedback">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input name="password" type="password" class="form-control form-control-user" id="password" placeholder="Password">
-                                        @error('password')
-                                        <span class="invalid-feedback">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-sm-6">
-                                    <input name="password_confirmation" type="password" class="form-control form-control-user" id="password_confirmation" placeholder="Repeat Password">
-                                        @error('password_confirmation')
-                                        <span class="invalid-feedback">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-reg btn-primary btn-user btn-block">Register Account</button>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="{{ route('login') }}">Already have an account? Login!</a>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" placeholder="Email Address" required>
+                                @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
+                                @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password_confirmation">Repeat Password</label>
+                                <input name="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" placeholder="Repeat Password" required>
+                                @error('password_confirmation')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Register Account</button>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a class="small" href="{{ route('login') }}">Already have an account? Login!</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
